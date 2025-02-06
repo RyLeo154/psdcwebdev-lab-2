@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Liter&display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: "Liter", sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f2f8ff;
+        }
+
+        .subtitlebody {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding-left: 4em;
+            padding-right: 4em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .circlepfp {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em;
+            z-index: 1000;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 1em;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            padding: 0.5em 1em;
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .masthead {
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            background: url('2.jpg') center/cover no-repeat;
+            margin-top: 5em;
+        }
+
+        @media (max-width: 1200px) {
+            .masthead {
+                width: 100%;
+            }
+        }
+
+        .signature {
+            width: 200px;
+        }
+
+        .headline {
+            padding-bottom: 14em;
+            font-family: "Liter", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+
+        .content-image {
+        margin: 2em 0;
+        border-radius: 50%; /* Make the image circular */
+        object-fit: cover; /* Ensure the image covers the area without distorting */
+        }
+
+        .skillset-image {
+            width: 60px;
+            height: 60px;
+        }
+
+        .divider {
+            width: 80%;
+            height: 2px;
+            background: black;
+            margin: 2em auto;
+        }
+
+        .info-table {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .info-table div {
+            width: 30%;
+        }
+
+        .employment-history {
+            width: 80%;
+            margin: 2em auto;
+            border-collapse: collapse;
+        }
+
+        .employment-history th, .employment-history td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .employment-history th {
+            background-color: lavender;
+        }
+
+        .social-navbar {
+            margin-top: 2em;
+        }
+
+        .social-navbar a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .footer {
+            margin-top: 2em;
+            padding: 1em;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .carousel {
+        width: 80%;
+        max-width: 600px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .carousel-inner {
+        display: flex;
+        width: 200%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel input {
+        display: none;
+    }
+
+    .slides {
+        width: 100%;
+        flex: 1;
+    }
+
+    .slides img {
+        width: 100%;
+        height: 360px;
+        display: block;
+    }
+
+    /* Navigation using labels */
+    .carousel-nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .carousel-nav label {
+        cursor: pointer;
+        padding: 5px;
+        background: #ddd;
+        border-radius: 50%;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+    }
+
+    /* Slide transition using radio buttons */
+    #slide1:checked ~ .carousel-inner {
+        transform: translateX(0%);
+    }
+
+    #slide2:checked ~ .carousel-inner {
+        transform: translateX(-50%);
+    }
+
+    /* Active navigation button */
+    #slide1:checked ~ .carousel-nav label[for="slide1"],
+    #slide2:checked ~ .carousel-nav label[for="slide2"] {
+        background: #333;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocKLLpEG1M8k3Zl55Cjr0hedAJlRTayz1MJwTSnxLnQrxWxy3OUJ=s360-c-no" alt="Profile">
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#notes">Notes</a>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <img class="signature" src="Untitled-1.png" alt="Signature">
+        <div class="headline">I'm a programmer and tech enthusiast.</div>
+    </header>
+
+    <section class="content-image">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocKLLpEG1M8k3Zl55Cjr0hedAJlRTayz1MJwTSnxLnQrxWxy3OUJ=s360-c-no" alt="Profile Picture" width="300">
+        <h2>Hello there!</h2>        
+    </section>
+    <section class="subtitlebody">
+        <p>I'm Ry, currently residing in Penang, Malaysia.<br>I picked up networking, HTML5, C and C++ programming, and engineering math in college, but my hobbies have taken my skills way beyond that.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="subtitlebody">
+        <p>Demonstrating innovative problem-solving skills, I have an exceptionally diverse skillset and strong foundational knowleldge in a wide variety of tech-related fields and more.</p>
+    </section>
+    <section style="padding-top: 2em;" class="info-table">
+        <div>
+           <img class="skillset-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1024px-Adobe_Photoshop_CC_icon.svg.png" alt="Profile">
+            <h3>Graphic Design</h3>
+            <p>I'm experienced with Illustrator, Photoshop, Krita and Clip Studio Paint for the creation of posters and 2D sprites.</p>
+        </div>
+        <div>
+            <img class="skillset-image" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Profile">
+            <h3>Excel Data Analysis</h3>
+            <p>I've created various complex calculators for use within various videogame communities.</p>
+
+        </div>
+        <div>
+            <img class="skillset-image" src="https://static.vecteezy.com/system/resources/thumbnails/014/161/162/small_2x/wrench-spanner-icon-screwdriver-logo-maintain-gear-wrench-mechanic-pictogram-symbol-vector.jpg" alt="Profile">
+            <h3>IT Hardware Management</h3>
+            <p>I can build PCs, perform maintenance, software data recovery, hardware repairs and complex troubleshooting for both laptops and desktops.</p>
+        </div>
+    </section>
+    <section class="info-table">
+        <div>
+            <img class="skillset-image" src="https://cdn-icons-png.flaticon.com/512/5270/5270972.png" alt="Profile">
+            <h3>Animation</h3>
+            <p>I have some experience with Blender, Adobe Animate, Moho Studio and Toon Boom Harmony for my 2D animation projects.</p>
+        </div>
+        <div>
+            <img class="skillset-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUFzlUX5L4SIZMWZURqZeIWaPjMGYrZdiY-s2zsRff6JhD-LZ4L9OFC2Ih0JavZV1-bCp_4cxRY7kfBoEeaLF8tUEvaEAAZcK4fsdtPg" alt="Profile">
+            <h3>Audio & Video Editing</h3>
+            <p>I'm experienced with audio production and video editing through Audition, FL Studio 21, Adobe Premiere and Adobe After Effects.</p>
+
+        </div>
+        <div>
+            <img class="skillset-image" src="data:image/png;base64,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" alt="Profile">
+            <h3>AI / Machine Learning</h3>
+            <p>I can get AI/ML workloads to work on a PC without relying on Internet access, including LLMs (chatbots), AI image generators and more, such as Llama and Stable Diffusion.</p>
+        </div>
+    </section>
+
+    <section class="divider"></section>
+
+    <section class="subtitlebody">
+        <p>I've worked for several companies in the past, accruing valuable experience.</h2>
+    </section>
+    <section>
+        <table class="employment-history">
+            <tr>
+                <th>Company</th>
+                <th>Position</th>
+                <th>Tenure</th>
+            </tr>
+            <tr>
+                <td>Coffee Bean & Tea Leaf</td>
+                <td>Barista</td>
+                <td>May 2018 - June 2021</td>
+            </tr>
+            <tr>
+                <td>Gadget Zone</td>
+                <td>Salesman</td>
+                <td>2021 - Present</td>
+            </tr>
+        </table>
+    </section>
+    <section class="subtitlebody">
+        <p>Since early 2024, I also operate a shop on Shopee as a solo entrepreneur, specializing in sales of computer parts and refurbishing laptops, then sell them to customers across Malaysia.<br>All reviews left by my customers so far are 5-star reviews!</p>
+    </section>
+    <section class="subtitlebody">
+        <p>I'm also currently a community moderator for a Discord server with over 14,300 members as of February 4, 2025.</p>
+    </section>
+
+    <section class="divider"></section>
+
+    <section class="subtitlebody">
+        <p>I also represented my college to win an innovation contest jointly hosted by ViTrox and UTAR, securing a top-three position!</p>
+    </section>
+    <div class="carousel">
+        <input type="radio" id="slide1" name="carousel" checked>
+        <input type="radio" id="slide2" name="carousel">
+    
+        <div class="carousel-inner">
+            <div class="slides"><img src="https://static.wixstatic.com/media/979156_802a3fa785f142b4bee6cd6536cbf422~mv2.jpg" alt="Slide 1"></div>
+            <div class="slides"><img src="https://static.wixstatic.com/media/979156_8bfa96ab90fd41d78b41a1680a3a4bc8~mv2.jpeg" alt="Slide 2"></div>
+        </div>
+    
+        <div class="carousel-nav">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+    </div>
+
+    <section class="divider"></section>
+
+    <section class="subtitlebody">
+        <p>And that's my story so far! I'll be entering internship in Q3 2025, so I look forward to potentially work with you! Feel free to reach out to me anytime using any of my [placeholder] contacts below!</p>
+    </section>
+
+    <div class="social-navbar">
+        <a href="#">🔗</a>
+        <a href="#">📷</a>
+        <a href="#">🐦</a>
+        <a href="#">📘</a>
+    </div>
+
+    <footer class="footer">
+        <p>Composed for WEBDEV Lab 2 Coursework.</p>
+    </footer>
+</body>
+</html>
